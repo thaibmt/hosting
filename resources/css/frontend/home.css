@@ -1,10 +1,10 @@
 @-webkit-keyframes snowflakes-fall {
     0% {
-        top: -10%
+        top: -10%;
     }
 
     100% {
-        top: 100%
+        top: 100%;
     }
 }
 
@@ -13,22 +13,22 @@
     0%,
     100% {
         -webkit-transform: translateX(0);
-        transform: translateX(0)
+        transform: translateX(0);
     }
 
     50% {
         -webkit-transform: translateX(80px);
-        transform: translateX(80px)
+        transform: translateX(80px);
     }
 }
 
 @keyframes snowflakes-fall {
     0% {
-        top: -10%
+        top: -10%;
     }
 
     100% {
-        top: 100%
+        top: 100%;
     }
 }
 
@@ -36,33 +36,12 @@
 
     0%,
     100% {
-        transform: translateX(0)
+        transform: translateX(0);
     }
 
     50% {
-        transform: translateX(80px)
+        transform: translateX(80px);
     }
-}
-
-.button3x {
-    display: table;
-    border-radius: 4px;
-    cursor: pointer;
-    border: double #eee;
-    font-weight: 500;
-    text-transform: uppercase;
-    color: #FFF;
-    background: linear-gradient(135deg, #de7921 25%, #E00000);
-    margin: 25px auto 0;
-    padding: 10px 20px;
-    font-size: 15px;
-    transition: all 1s
-}
-
-.button3x:hover {
-    color: #fff;
-    opacity: 0.8;
-    box-shadow: 0 0 18px 18px rgba(80, 80, 80, 0)
 }
 
 .snowflake {
@@ -93,78 +72,196 @@
 .snowflake:nth-of-type(0) {
     left: 1%;
     -webkit-animation-delay: 0s, 0s;
-    animation-delay: 0s, 0s
+    animation-delay: 0s, 0s;
 }
 
 .snowflake:nth-of-type(1) {
     left: 10%;
     -webkit-animation-delay: 1s, 1s;
-    animation-delay: 1s, 1s
+    animation-delay: 1s, 1s;
 }
 
 .snowflake:nth-of-type(2) {
     left: 20%;
-    -webkit-animation-delay: 6s, .5s;
-    animation-delay: 6s, .5s
+    -webkit-animation-delay: 6s, 0.5s;
+    animation-delay: 6s, 0.5s;
 }
 
 .snowflake:nth-of-type(3) {
     left: 30%;
     -webkit-animation-delay: 4s, 2s;
-    animation-delay: 4s, 2s
+    animation-delay: 4s, 2s;
 }
 
 .snowflake:nth-of-type(4) {
     left: 40%;
     -webkit-animation-delay: 2s, 2s;
-    animation-delay: 2s, 2s
+    animation-delay: 2s, 2s;
 }
 
 .snowflake:nth-of-type(5) {
     left: 50%;
     -webkit-animation-delay: 8s, 3s;
-    animation-delay: 8s, 3s
+    animation-delay: 8s, 3s;
 }
 
 .snowflake:nth-of-type(6) {
     left: 60%;
     -webkit-animation-delay: 6s, 2s;
-    animation-delay: 6s, 2s
+    animation-delay: 6s, 2s;
 }
 
 .snowflake:nth-of-type(7) {
     left: 70%;
     -webkit-animation-delay: 2.5s, 1s;
-    animation-delay: 2.5s, 1s
+    animation-delay: 2.5s, 1s;
 }
 
 .snowflake:nth-of-type(8) {
     left: 80%;
     -webkit-animation-delay: 1s, 0s;
-    animation-delay: 1s, 0s
+    animation-delay: 1s, 0s;
 }
 
 .snowflake:nth-of-type(9) {
     left: 90%;
     -webkit-animation-delay: 3s, 1.5s;
-    animation-delay: 3s, 1.5s
+    animation-delay: 3s, 1.5s;
 }
 
 .snowflake:nth-of-type(10) {
     left: 25%;
     -webkit-animation-delay: 2s, 0s;
-    animation-delay: 2s, 0s
+    animation-delay: 2s, 0s;
 }
 
 .snowflake:nth-of-type(11) {
     left: 65%;
     -webkit-animation-delay: 4s, 2.5s;
-    animation-delay: 4s, 2.5s
+    animation-delay: 4s, 2.5s;
+}
+
+.button3x {
+    display: table;
+    border-radius: 4px;
+    cursor: pointer;
+    border: double #eee;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #fff;
+    background: linear-gradient(135deg, #de7921 25%, #e00000);
+    margin: 25px auto 0;
+    padding: 10px 20px;
+    font-size: 15px;
+    transition: all 1s;
+}
+
+.button3x:hover {
+    color: #fff;
+    opacity: 0.8;
+    box-shadow: 0 0 18px 18px rgba(80, 80, 80, 0);
+}
+
+.snowflake {
+    color: #fff;
+    font-size: 1em;
+    font-family: Arial, sans-serif;
+    text-shadow: 0 0 5px #000;
+    position: fixed;
+    top: -10%;
+    z-index: 9999;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: default;
+    -webkit-animation-name: snowflakes-fall, snowflakes-shake;
+    -webkit-animation-duration: 10s, 3s;
+    -webkit-animation-timing-function: linear, ease-in-out;
+    -webkit-animation-iteration-count: infinite, infinite;
+    -webkit-animation-play-state: running, running;
+    animation-name: snowflakes-fall, snowflakes-shake;
+    animation-duration: 10s, 3s;
+    animation-timing-function: linear, ease-in-out;
+    animation-iteration-count: infinite, infinite;
+    animation-play-state: running, running;
+}
+
+.snowflake:nth-of-type(0) {
+    left: 1%;
+    -webkit-animation-delay: 0s, 0s;
+    animation-delay: 0s, 0s;
+}
+
+.snowflake:nth-of-type(1) {
+    left: 10%;
+    -webkit-animation-delay: 1s, 1s;
+    animation-delay: 1s, 1s;
+}
+
+.snowflake:nth-of-type(2) {
+    left: 20%;
+    -webkit-animation-delay: 6s, 0.5s;
+    animation-delay: 6s, 0.5s;
+}
+
+.snowflake:nth-of-type(3) {
+    left: 30%;
+    -webkit-animation-delay: 4s, 2s;
+    animation-delay: 4s, 2s;
+}
+
+.snowflake:nth-of-type(4) {
+    left: 40%;
+    -webkit-animation-delay: 2s, 2s;
+    animation-delay: 2s, 2s;
+}
+
+.snowflake:nth-of-type(5) {
+    left: 50%;
+    -webkit-animation-delay: 8s, 3s;
+    animation-delay: 8s, 3s;
+}
+
+.snowflake:nth-of-type(6) {
+    left: 60%;
+    -webkit-animation-delay: 6s, 2s;
+    animation-delay: 6s, 2s;
+}
+
+.snowflake:nth-of-type(7) {
+    left: 70%;
+    -webkit-animation-delay: 2.5s, 1s;
+    animation-delay: 2.5s, 1s;
+}
+
+.snowflake:nth-of-type(8) {
+    left: 80%;
+    -webkit-animation-delay: 1s, 0s;
+    animation-delay: 1s, 0s;
+}
+
+.snowflake:nth-of-type(9) {
+    left: 90%;
+    -webkit-animation-delay: 3s, 1.5s;
+    animation-delay: 3s, 1.5s;
+}
+
+.snowflake:nth-of-type(10) {
+    left: 25%;
+    -webkit-animation-delay: 2s, 0s;
+    animation-delay: 2s, 0s;
+}
+
+.snowflake:nth-of-type(11) {
+    left: 65%;
+    -webkit-animation-delay: 4s, 2.5s;
+    animation-delay: 4s, 2.5s;
 }
 
 .btn-action {
-    height: calc(1.5em + .75rem + 2px);
-    padding: .375rem .75rem;
+    height: calc(1.5em + 0.75rem + 2px);
+    padding: 0.375rem 0.75rem;
 }
 
 .form_card {
@@ -204,7 +301,7 @@ div.box-price>div.price-content>.price-over-text {
 }
 
 .screen:after {
-    content: '';
+    content: "";
     display: block;
     position: absolute;
     top: 0;
@@ -212,7 +309,7 @@ div.box-price>div.price-content>.price-over-text {
     right: 20px;
     bottom: 0;
     border-radius: 15px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, .4);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
     z-index: -1;
 }
 
@@ -287,7 +384,7 @@ div.box-price>div.price-content>.price-over-text {
 }
 
 .app-title:after {
-    content: '';
+    content: "";
     display: block;
     position: absolute;
     left: 0;
@@ -322,7 +419,7 @@ div.box-price>div.price-content>.price-over-text {
     font-size: 14px;
     text-transform: uppercase;
     outline: none;
-    transition: border-color .2s;
+    transition: border-color 0.2s;
 }
 
 .app-form-control::placeholder {
@@ -345,7 +442,6 @@ div.box-price>div.price-content>.price-over-text {
 .app-form-button:hover {
     color: #b9134f;
 }
-
 
 @media screen and (max-width: 520px) {
     .screen-body {
@@ -403,48 +499,48 @@ div.box-price>div.price-content>.price-over-text {
 
 @keyframes zoom {
     0% {
-        transform: scale(.5);
-        opacity: 0
+        transform: scale(0.5);
+        opacity: 0;
     }
 
     50% {
-        opacity: 1
+        opacity: 1;
     }
 
     to {
         opacity: 0;
-        transform: scale(1)
+        transform: scale(1);
     }
 }
 
 @keyframes lucidgenzalo {
-    0% to {
-        transform: rotate(-25deg)
+    0% {
+        transform: rotate(-25deg);
     }
 
     50% {
-        transform: rotate(25deg)
+        transform: rotate(25deg);
     }
 }
 
 .jscroll-to-top {
-    bottom: 100px
+    bottom: 100px;
 }
 
 .fcta-zalo-ben-trong-nut svg path {
-    fill: #fff
+    fill: #fff;
 }
 
 .fcta-zalo-vi-tri-nut {
     position: fixed;
     bottom: 24px;
     right: 20px;
-    z-index: 999
+    z-index: 999;
 }
 
 .fcta-zalo-nen-nut,
 div.fcta-zalo-mess {
-    box-shadow: 0 1px 6px rgba(0, 0, 0, .06), 0 2px 32px rgba(0, 0, 0, .16)
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.06), 0 2px 32px rgba(0, 0, 0, 0.16);
 }
 
 .fcta-zalo-nen-nut {
@@ -454,7 +550,7 @@ div.fcta-zalo-mess {
     color: #fff;
     background: #0068ff;
     border-radius: 50%;
-    position: relative
+    position: relative;
 }
 
 .fcta-zalo-nen-nut::after,
@@ -469,16 +565,16 @@ div.fcta-zalo-mess {
     top: -20px;
     bottom: -20px;
     border-radius: 50%;
-    animation: zoom 1.9s linear infinite
+    animation: zoom 1.9s linear infinite;
 }
 
 .fcta-zalo-nen-nut::after {
-    animation-delay: .4s
+    animation-delay: 0.4s;
 }
 
 .fcta-zalo-ben-trong-nut,
 .fcta-zalo-ben-trong-nut i {
-    transition: all 1s
+    transition: all 1s;
 }
 
 .fcta-zalo-ben-trong-nut {
@@ -490,26 +586,26 @@ div.fcta-zalo-mess {
     bottom: 25px;
     line-height: 70px;
     font-size: 25px;
-    opacity: 1
+    opacity: 1;
 }
 
 .fcta-zalo-ben-trong-nut i {
-    animation: lucidgenzalo 1s linear infinite
+    animation: lucidgenzalo 1s linear infinite;
 }
 
 .fcta-zalo-nen-nut:hover .fcta-zalo-ben-trong-nut,
 .fcta-zalo-text {
-    opacity: 0
+    opacity: 0;
 }
 
 .fcta-zalo-nen-nut:hover i {
-    transform: scale(.5);
-    transition: all .5s ease-in
+    transform: scale(0.5);
+    transition: all 0.5s ease-in;
 }
 
 .fcta-zalo-text a {
     text-decoration: none;
-    color: #fff
+    color: #fff;
 }
 
 .fcta-zalo-text {
@@ -519,13 +615,13 @@ div.fcta-zalo-mess {
     font-size: 12px;
     font-weight: 700;
     transform: scaleX(-1);
-    transition: all .5s;
-    line-height: 1.5
+    transition: all 0.5s;
+    line-height: 1.5;
 }
 
 .fcta-zalo-nen-nut:hover .fcta-zalo-text {
     transform: scaleX(1);
-    opacity: 1
+    opacity: 1;
 }
 
 div.fcta-zalo-mess {
@@ -538,18 +634,18 @@ div.fcta-zalo-mess {
     color: #0068ff;
     border-radius: 50px 0 0 50px;
     font-weight: 700;
-    font-size: 15px
+    font-size: 15px;
 }
 
 .fcta-zalo-mess span {
-    color: #0068ff !important
+    color: #0068ff !important;
 }
 
 span#fcta-zalo-tracking {
     font-family: Roboto;
-    line-height: 1.5
+    line-height: 1.5;
 }
 
 .fcta-zalo-text {
-    font-family: Roboto
+    font-family: Roboto;
 }

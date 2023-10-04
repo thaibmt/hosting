@@ -4,6 +4,7 @@ use App\Livewire\Category;
 use App\Livewire\Domain;
 use App\Livewire\Frontend\Home;
 use App\Livewire\Hosting;
+use App\Livewire\Vps;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,4 +32,8 @@ Route::prefix('admin')->middleware([
     Route::get('category/{type}', Category::class);
     Route::get('hosting', Hosting::class);
     Route::get('domain', Domain::class);
+    Route::get('vps', Vps::class);
 });
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

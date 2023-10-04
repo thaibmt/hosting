@@ -341,6 +341,22 @@ return [
             ],
         ],
         [
+            'text'    => 'VPS',
+            'icon'    => 'fas fa-fw fa-share',
+            'submenu' => [
+                [
+                    'text' => 'Tổng quan',
+                    'url'  => 'admin/vps',
+                    'icon_color' => 'primary',
+                ],
+                [
+                    'text' => 'Chuyên mục',
+                    'url'  => 'admin/category/vps',
+                    'icon_color' => 'success',
+                ],
+            ],
+        ],
+        [
             'text'    => 'Domain',
             'icon'    => 'fas fa-fw fa-share',
             'submenu' => [
@@ -475,6 +491,16 @@ return [
                     'type' => 'css',
                     'asset' => true,
                     'location' => '//cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css',
+                ],
+            ],
+        ],
+        'BsCustomFileInput' => [
+            'active' => true,
+            'files' => [
+                [
+                    'type' => 'js',
+                    'asset' => true,
+                    'location' => 'https://cdn.jsdelivr.net/npm/bs-custom-file-input/dist/bs-custom-file-input.min.js',
                 ],
             ],
         ],

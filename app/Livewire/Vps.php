@@ -2,17 +2,17 @@
 
 namespace App\Livewire;
 
-use App\Models\Hosting as ModelsHosting;
+use App\Models\Vps as ModelsVps;
 use App\Models\Category;
 use Exception;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 
-class Hosting extends Component
+class Vps extends Component
 {
     use WithFileUploads;
     public $image, $_image;
-    public  $hostingEdit, $hostings, $categories, $type = "hosting",
+    public  $vpsEdit, $vpss, $categories, $type = "vps",
         $name,  $slug, $category_id, $content, $description, $price = 0, $suffix = 'đ/Tháng',
         $_name, $_slug, $_category_id, $_content, $_description, $_price, $_suffix;
     /**
@@ -25,7 +25,7 @@ class Hosting extends Component
      */
     protected $rules = [
         'name' => 'required',
-        'image' => 'image|nullable'
+        'image' => 'nullable|image'
     ];
 
     protected $messages = [
@@ -37,9 +37,9 @@ class Hosting extends Component
 
     public function render()
     {
-        $this->categories = Category::with('parent')->whereType('hosting')->get();
-        $this->hostings = ModelsHosting::with('category')->get();
-        return view('livewire.hosting')->extends('adminlte::page')->section('content');
+        $this->categories = Category::with('parent')->whereType('vps')->get();
+        $this->vpss = ModelsVps::with('category')->get();
+        return view('livewire.vps')->extends('adminlte::page')->section('content');
     }
 
     public function runValidate($id = null)
@@ -56,17 +56,17 @@ class Hosting extends Component
     public function edit($id = null)
     {
         try {
-            $this->hostingEdit = ModelsHosting::findOrFail($id);
-            $this->_name = $this->hostingEdit->name;
-            $this->_slug = $this->hostingEdit->slug;
-            $this->_price = $this->hostingEdit->price;
-            $this->_suffix = $this->hostingEdit->suffix;
-            $this->_category_id = $this->hostingEdit->category_id;
-            $this->_image = $this->hostingEdit->image;
-            $this->_content = $this->hostingEdit->content;
-            $this->_description = $this->hostingEdit->description;
-            $this->dispatch('setSummernoteContent',  ['name' => '#_content', 'content' => $this->hostingEdit->content]);
-            $this->dispatch('openModal', modal: '#edit_hosting');
+            $this->vpsEdit = ModelsVps::findOrFail($id);
+            $this->_name = $this->vpsEdit->name;
+            $this->_slug = $this->vpsEdit->slug;
+            $this->_price = $this->vpsEdit->price;
+            $this->_suffix = $this->vpsEdit->suffix;
+            $this->_category_id = $this->vpsEdit->category_id;
+            $this->_image = $this->vpsEdit->image;
+            $this->_content = $this->vpsEdit->content;
+            $this->_description = $this->vpsEdit->description;
+            $this->dispatch('setSummernoteContent',  ['name' => '#_content', 'content' => $this->vpsEdit->content]);
+            $this->dispatch('openModal', modal: '#edit_vps');
             $this->runValidate($id);
         } catch (Exception $exception) {
             $this->dispatch('swal', icon: 'error', text: $exception->getMessage());
@@ -87,12 +87,12 @@ class Hosting extends Component
                 'content' => $id ? $this->_content : $this->content,
             ];
 
-            $record = ModelsHosting::updateOrCreate(['id' => $id], $data);
+            $record = ModelsVps::updateOrCreate(['id' => $id], $data);
             if ($this->_image || $this->image) {
-                $id ? $record->image = $this->_image->storeAs('hostings', $record->slug . "." . $this->_image->getClientOriginalExtension(), 'public') :  $record->image = $this->image->storeAs('hostings', $record->slug . "." . $this->image->getClientOriginalExtension(), 'public');
+                $id ? $record->image = $this->_image->storeAs('vpss', $record->slug . "." . $this->_image->getClientOriginalExtension(), 'public') :  $record->image = $this->image->storeAs('vpss', $record->slug . "." . $this->image->getClientOriginalExtension(), 'public');
                 $record->save();
             }
-            $this->dispatch('swal', icon: 'success', text: $id ? 'Cập nhật hosting thành công' : 'Thêm hosting thành công');
+            $this->dispatch('swal', icon: 'success', text: $id ? 'Cập nhật vps thành công' : 'Thêm vps thành công');
         } catch (Exception $exception) {
             $this->dispatch('swal', icon: 'error', text: $exception->getMessage());
         }
@@ -101,8 +101,8 @@ class Hosting extends Component
     public function delete($id)
     {
         try {
-            ModelsHosting::find($id)->delete();
-            $this->dispatch('swal', icon: 'success', text: 'Xóa hosting thành công');
+            ModelsVps::find($id)->delete();
+            $this->dispatch('swal', icon: 'success', text: 'Xóa vps thành công');
         } catch (Exception $exception) {
             $this->dispatch('swal', icon: 'error', text: $exception->getMessage());
         }

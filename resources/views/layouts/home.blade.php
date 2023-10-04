@@ -17,81 +17,71 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.31/dist/sweetalert2.min.css">
     <link rel="stylesheet" href="{{ asset('assets/css/dataTables.bootstrap4.min.css') }}">
     <!-- Scripts -->
-    @vite(['resources/css/home.css', 'resources/js/home.js'])
+    @vite(['resources/css/frontend/home.css', 'resources/js/frontend/home.js'])
 
     <!-- Styles -->
     @livewireStyles
 </head>
 
 <body class="font-sans antialiased">
-
     <nav class="navbar navbar-expand-lg navbar-light bg-light mb-3 shadow-lg p-2">
-
-        <body style="background-color: #EEEEEE;">
-            <div class="container">
-                <a class="navbar-brand" href="index.html"><img src="../i.imgur.com/mVAJlQY.png"
-                        style="width: 150px; height: 40px"></a>
-                <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse"
-                    data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="collapsibleNavId">
-                    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.html"><i class="fa fa-home"></i> Trang chủ <span
-                                    class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="https://www.facebook.com/kythuat.anori"><i class="fa fa-code"></i>
-                                FANPAGE ANORI.VN</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="https://www.facebook.com/hoang.an.ytb"><i
-                                    class="fab fa-facebook-square"></i> FB Admin</span></a>
-                        <li class="nav-item">
-                            <a class="nav-link" href="https://zalo.me/0983699291"><i class="fas fa-comment"></i> Zalo
-                                Admin</span></a>
-                        <li class="nav-item">
-                            <a class="nav-link" href="Nap-Tien.html"><i class='fa fa-id-card'
-                                    style='font-size:17px'></i> Nạp Tiền</span></a>
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><img src="{{ asset('storage/i.imgur.com/mVAJlQY.png') }}"
+                    style="width: 150px; height: 40px"></a>
+            <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse"
+                data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavId">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html"><i class="fa fa-home"></i> Trang chủ <span
+                                class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://www.facebook.com/kythuat.anori"><i class="fa fa-code"></i>
+                            FANPAGE ANORI.VN</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://www.facebook.com/hoang.an.ytb"><i
+                                class="fab fa-facebook-square"></i> FB Admin</span></a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://zalo.me/0983699291"><i class="fas fa-comment"></i> Zalo
+                            Admin</span></a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Nap-Tien.html"><i class='fa fa-id-card' style='font-size:17px'></i>
+                            Nạp Tiền</span></a>
 
 
-                        </li>
+                    </li>
 
-                    </ul>
-                    <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#" data-toggle="modal" data-target="#exampleModalLong"><i
-                                    class="fa fa-language"></i></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#" id="btnFullscreen"><i class="fa fa-expand"></i></a>
-                        </li>
+                </ul>
+                <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-toggle="modal" data-target="#exampleModalLong"><i
+                                class="fa fa-language"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="btnFullscreen"><i class="fa fa-expand"></i></a>
+                    </li>
 
-                        <div class="mb-4"></div>
-                        <div class="float-right">
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="dropdownId"
-                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                                    menu-data="account"><i class="fa fa-user-circle"></i> Đăng Ký/ Đăng Nhập
-                                </a>
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownId">
-                                    <a class="dropdown-item" menu-data="account" href="dang-nhap.html"><i
-                                            class="fa fa-sign-in-alt"></i> Đăng nhập</a>
-                                    <a class="dropdown-item" menu-data="account" href="dang-ky.html"><i
-                                            class="fa fa-user-plus"></i> Đăng kí</a>
-                                </div>
-                        </div>
-                </div>
+                    <div class="mb-4"></div>
+                    <div class="float-right">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false" menu-data="account"><i
+                                    class="fa fa-user-circle"></i> Đăng Ký/ Đăng Nhập
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownId">
+                                <a class="dropdown-item" menu-data="account" href="dang-nhap.html"><i
+                                        class="fa fa-sign-in-alt"></i> Đăng nhập</a>
+                                <a class="dropdown-item" menu-data="account" href="dang-ky.html"><i
+                                        class="fa fa-user-plus"></i> Đăng kí</a>
+                            </div>
+                    </div>
             </div>
-
-
-            </div>
-
-            </div>
-
-            </div>
+        </div>
     </nav>
     <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog"
         aria-labelledby="exampleModalLongTitle" aria-hidden="true">
@@ -117,16 +107,18 @@
     </div>
 
     <div class="snowflakes" aria-hidden="true">
-        <div class="snowflake">💸</div>
-        <div class="snowflake">💲</div>
-        <div class="snowflake">🎁</div>
-        <div class="snowflake">💸</div>
-        <div class="snowflake">💲</div>
-        <div class="snowflake">🎁</div>
-
-
-
-        <div id="thongbao"></div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
     </div>
     <footer class="c-layout-footer c-layout-footer-3 bg-dark py-3" style="max-width: 100%;">
         <div class="c-prefooter">
@@ -199,12 +191,10 @@
             </div>
         </div>
     </a>
+    <script src="{{ asset('assets/js/jquery-3.5.1.min.js') }}"></script>
     <script src="{{ asset('assets/js/popper.min.js') }}"></script>
     <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('assets/js/page.min.js') }}"></script>
-
-
-    <script src="{{ asset('assets/js/jquery-3.5.1.min.js') }}"></script>
     <script src="{{ asset('assets/js/plugins.js') }}"></script>
     <script src="{{ asset('assets/js/app3769.js') }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"></script>

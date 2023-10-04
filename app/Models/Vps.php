@@ -6,9 +6,11 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Traits\Sluggable;
 
-class Hosting extends Model
+class Vps extends Model
 {
     use HasFactory, Sluggable;
+
+    protected $table = 'vps';
     protected $fillable = [
         'name', 'slug', 'price', 'suffix', 'description', 'content', 'image', 'active', 'category_id', 'image'
     ];

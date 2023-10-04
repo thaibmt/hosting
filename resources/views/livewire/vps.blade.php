@@ -3,10 +3,10 @@
         <div class="col-lg-4">
             <div class="card card-light">
                 <div class="card-header">
-                    <h3 class="card-title">Thêm hosting</h3>
+                    <h3 class="card-title">Thêm vps</h3>
                 </div>
                 <div class="card-body">
-                    <form id="form_create_hosting" wire:submit.prevent="save">
+                    <form id="form_create_vps" wire:submit.prevent="save">
                         <x-adminlte-input wire:model="name" name="name" label="Tên" placeholder="Tên"
                             label-class="text-lightblue required">
                             <x-slot name="prependSlot">
@@ -74,8 +74,8 @@
                     </form>
                 </div>
                 <div class="card-footer">
-                    <x-adminlte-button form="form_create_hosting" class="btn-flat float-right" type="submit"
-                        label="Tạo" theme="success" icon="fas fa-lg fa-save" />
+                    <x-adminlte-button form="form_create_vps" class="btn-flat float-right" type="submit" label="Tạo"
+                        theme="success" icon="fas fa-lg fa-save" />
                 </div>
             </div>
         </div>
@@ -86,20 +86,20 @@
 
             {{-- Minimal example / fill data using the component slot --}}
             <x-adminlte-datatable id="table1" :heads="$heads" head-theme="light">
-                @foreach ($hostings as $key => $hosting)
+                @foreach ($vpss as $key => $vps)
                     <tr>
                         <td>{{ $key + 1 }}</td>
                         <td><img width="50" height="50"
-                                src="{{ asset('storage/' . $hosting->image) }}">{{ $hosting->name }}
+                                src="{{ asset('storage/' . $vps->image) }}">{{ $vps->name }}
                         </td>
-                        <td>{{ $hosting->slug }}</td>
-                        <td>{{ $hosting->category ? $hosting->category->name : '-' }}</td>
+                        <td>{{ $vps->slug }}</td>
+                        <td>{{ $vps->category ? $vps->category->name : '-' }}</td>
                         <td class="d-flex">
-                            <button onclick="Livewire.dispatch('edit', {id: {{ $hosting->id }} })"
+                            <button onclick="Livewire.dispatch('edit', {id: {{ $vps->id }} })"
                                 class="btn btn-xs btn-default text-primary mx-1 shadow" title="Sửa">
                                 <i class="fa fa-lg fa-fw fa-pen"></i>
                             </button>
-                            <button onclick="Livewire.dispatch('delete', {id: {{ $hosting->id }} })"
+                            <button onclick="Livewire.dispatch('delete', {id: {{ $vps->id }} })"
                                 class="btn btn-xs btn-default text-danger mx-1 shadow" title="Xóa">
                                 <i class="fa fa-lg fa-fw fa-trash"></i>
                             </button>
@@ -108,9 +108,9 @@
                 @endforeach
             </x-adminlte-datatable>
         </div>
-        <x-adminlte-modal wire:ignore.self id="edit_hosting" title="Chỉnh sửa" theme="light" icon="fas fa-bolt"
+        <x-adminlte-modal wire:ignore.self id="edit_vps" title="Chỉnh sửa" theme="light" icon="fas fa-bolt"
             size='lg'>
-            <form wire:submit.prevent="save({{ $hostingEdit ? $hostingEdit->id : '' }})">
+            <form wire:submit.prevent="save({{ $vpsEdit ? $vpsEdit->id : '' }})">
                 <img width="100" height="100" src="{{ asset('storage/' . $_image) }}">
                 <x-adminlte-input wire:model="_name" name="_name" label="Chuyên mục" placeholder="Chuyên mục"
                     label-class="text-lightblue required">
@@ -154,7 +154,7 @@
                     <option selected>Chọn danh mục</option>
                     @foreach ($categories as $category)
                         <option value="{{ $category->id }}"
-                            {{ $hostingEdit?->category_id == $category->id ? 'selected' : '' }}>
+                            {{ $vpsEdit?->category_id == $category->id ? 'selected' : '' }}>
                             {{ $category->name }}</option>
                     @endforeach
                 </x-adminlte-select>
