@@ -372,6 +372,18 @@ return [
                 ],
             ],
         ],
+        ['header' => 'Hệ thống'],
+        [
+            'text'    => 'Cài đặt',
+            'icon'    => 'fas fa-fw fa-share',
+            'submenu' => [
+                [
+                    'text' => 'Tổng quan',
+                    'url'  => 'admin/option',
+                    'icon_color' => 'primary',
+                ],
+            ],
+        ],
     ],
 
     /*
